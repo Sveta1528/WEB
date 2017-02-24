@@ -1,0 +1,90 @@
+.modest-gallery{
+  padding-left: 15%;
+  padding-right: 20%;
+  background-color: #3a454d;
+  margin-top: 100px;
+  padding-top: 70px;
+}
+
+.modest-gallery__header{
+padding-left:20px;
+border-left: 10px solid #4e5a62;
+margin-bottom: 50px;
+font-family: 'Quattrocento Sans', sans-serif;
+font-size: 36px;
+color: #ffffff;
+text-transform: uppercase;
+}
+
+.modest-gallery__images{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content:space-between;
+}
+
+.gallery__img{
+  margin-bottom: 30px;
+}
+
+.modest-gallery__images__content__text{
+  position: absolute;
+  //top:30%;
+  //margin-bottom: -70px;
+  padding-right: 103px;
+  border: 2px solid #292f36;
+  border-width: 15px;
+  background-color: #292f36;
+  z-index: 50;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 18px;
+  color:  #fff;
+  text-transform: uppercase;
+  //margin-bottom: 0px;
+  margin-top: -85px;
+  visibility:hidden;
+}
+
+.gallery__plus{
+  margin-left: -190px;
+  margin-bottom: 170px;
+  visibility: hidden;;
+}
+
+.modest-gallery__hover{
+  &:hover, &:focus {
+    .gallery__img{
+      opacity: 0.2;
+    }
+    .gallery__plus{
+      visibility: visible;
+    }
+    .modest-gallery__images__content__text{
+      visibility: visible;
+    }
+  }
+}
+
+.modest-gallery__images{
+  &__1{.modest-gallery__hover}
+  &__2{.modest-gallery__hover}
+  &__3{.modest-gallery__hover}
+  &__4{.modest-gallery__hover}
+  &__5{.modest-gallery__hover}
+  &__6{.modest-gallery__hover}
+}
+
+.modest-gallery__button{
+  margin-top: 10px;
+  margin-left: 41%;
+  padding: 15px 15px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  text-transform: uppercase;
+  font-size: 14px;
+  border: 2px solid #fff;
+  border-radius: 7px;
+  text-decoration: none;
+  letter-spacing: 3px;
+  color: white;
+  margin-bottom: 30px;
+}
