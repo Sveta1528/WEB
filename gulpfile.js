@@ -4,20 +4,22 @@ var less = require('gulp-less');
     browserSync = require('browser-sync'); // Подключаем Browser Sync
     minifyCSS = require('gulp-minify-css');
     inlinesource = require('gulp-inline-source');
-    LessPluginCleanCSS = require('less-plugin-clean-css'),
-    LessPluginAutoPrefix = require('less-plugin-autoprefix'),
-    cleancss = new LessPluginCleanCSS({ advanced: true }),
-    autoprefix= new LessPluginAutoPrefix({ browsers: ["last 2 versions"] });
+    var LessPluginCleanCSS = require('less-plugin-clean-css'),
+        LessPluginAutoPrefix = require('less-plugin-autoprefix'),
+        cleancss = new LessPluginCleanCSS({ advanced: true }),
+        autoprefix= new LessPluginAutoPrefix({ browsers: ["last 4 versions"] });
 
     var htmlclean = require('gulp-htmlclean');
     var concat = require('gulp-concat');
 
     var uglify = require('gulp-uglify');
+    var autoprefixer = require('gulp-autoprefixer');
+    var del = require('del'); // Подключаем библиотеку для удаления файлов и папок
 
 gulp.task('less-to-css', function(){
     return gulp.src('app/less/**/*.less') // Берем все sass файлы из папки sass и дочерних, если таковые будут
         .pipe(less({
-          plugins: [autoprefix, cleancss]
+          plugins: [autoprefix,cleancss]
         }))
         .pipe(concat('build.css'))
         .pipe(minifyCSS())
@@ -43,8 +45,6 @@ gulp.src('./app/fonts/*.css')
 
 
 //move images to public
-gulp.src(['./app/img/*']).pipe(gulp.dest('./public/img/'));
-gulp.src(['./app/img/**/*']).pipe(gulp.dest('./public/img/'));
 
 //inline link, script and img in index.html . Clean html.
 gulp.task('index', function () {
@@ -57,6 +57,33 @@ gulp.task('index', function () {
         .pipe(gulp.dest('./dist/'));
 });
 
+gulp.task('clean', function() {
+    return del.sync('dist'); // Удаляем папку dist перед сборкой
+});
+
+gulp.task('build', ['clean','less-to-css'], function() {
+
+    var buildCss = gulp.src([ // Переносим CSS стили в продакшен
+        'app/css/*.css',
+        ])
+    .pipe(gulp.dest('dist/css'))
+
+    var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/fonts'))
+
+    var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
+    .pipe(gulp.dest('dist/js'))
+
+    var buildHtml = gulp.src('app/*.html') // Переносим HTML в продакшен
+    .pipe(gulp.dest('dist'));
+
+    var buildImgs = gulp.src(['./app/img/*'])
+    .pipe(gulp.dest('./dist/img/'));
+
+    var buildImgs2=gulp.src(['./app/img/**/*'])
+    .pipe(gulp.dest('./dist/img/'));
+
+});
 
 gulp.task('watch', ['browser-sync', 'index', ], function() {
     gulp.watch('app/less/**/*.less', ['less-to-css']); // Наблюдение за less файлами в папке less
