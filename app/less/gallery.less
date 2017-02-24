@@ -1,9 +1,13 @@
 .modest-gallery{
-  padding-left: 15%;
-  padding-right: 20%;
   background-color: #3a454d;
   margin-top: 100px;
   padding-top: 70px;
+}
+
+.modest-gallery__content{
+  width: 1170px;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .modest-gallery__header{
@@ -29,8 +33,6 @@ text-transform: uppercase;
 
 .modest-gallery__images__content__text{
   position: absolute;
-  //top:30%;
-  //margin-bottom: -70px;
   padding-right: 103px;
   border: 2px solid #292f36;
   border-width: 15px;
@@ -87,4 +89,13 @@ text-transform: uppercase;
   letter-spacing: 3px;
   color: white;
   margin-bottom: 30px;
+}
+
+
+@media (max-width: 1170px) {
+
+  .modest-gallery__content{ width: 760px; }
+
+  .modest-gallery__header{font-size: 24px;}
+
 }
