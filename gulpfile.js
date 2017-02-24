@@ -24,6 +24,7 @@ gulp.task('less-to-css', function(){
         .pipe(gulp.dest('./app/css'))
         .pipe(browserSync.reload({stream: true}))
         .pipe(gulp.dest('./dist/css'))
+        includePaths: require('node-normalize-scss').includePaths
 });
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync

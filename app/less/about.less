@@ -1,7 +1,8 @@
 
 .modest-about{
-  margin-left: 15%;
-  margin-right: 20%;
+  width: 1170px;
+  align-items: center;
+  margin: 0 auto;
 }
 
 .modest-about__header{
@@ -65,4 +66,38 @@ color: #292f36;
 .modest-about__content__social{
   margin-top: 30px;
   margin-bottom: 30px;
+}
+
+@media (max-width: 1170px) {
+
+  .modest-about{
+    width: 700px;
+  }
+
+  .modest-about__header{
+  font-size: 24px;
+  }
+
+  .modest-about__content__text{
+      max-width: 420px;
+      font-size: 12px;
+    }
+
+    .modest-about__content__navbar{
+      &__item{
+        &__num{
+          font-size: 12px;
+          border-width: 10px;
+        }
+        &__content{
+          &__title{
+            font-size: 14px;
+          }
+          &__text{
+            font-size: 12px;
+          }
+        }
+      }
+    }
+
 }

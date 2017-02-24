@@ -4,13 +4,16 @@
   background-repeat: no-repeat;
   background-size: cover;
   min-height: 560px;
-  padding-left: 15%;
-  padding-right: 20%;
-
 }
 
 .modest-header__content{
 
+  width: 1170px;
+  display: flex;
+  -webkit-flex-flow: row wrap;
+  justify-content:space-between;
+  align-items: center;
+  margin: 0 auto;
   &__info{
     position: absolute;
     top : 250px;
@@ -55,4 +58,23 @@
     transition: .5s;
   }
 }
+}
+
+@media (max-width: 1170px) {
+
+  .modest-header__content{
+    width: 700px;
+
+      &__info{
+        &__headline{
+
+          font-size: 20px;
+          color: white;
+      }
+        &__text{
+          font-size: 14px;
+          max-width: 480px;
+        }
+      }
+  }
 }
