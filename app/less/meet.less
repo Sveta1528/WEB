@@ -23,14 +23,12 @@ text-transform: uppercase;
 }
 
 .modest-meet__people__content{
-  //margin-top: -20px;
   border: 2px solid #e1e6ea;
   border-width: 15px;
   background-color: #e1e6ea;
   &__header{
     font-family: 'Quattrocento Sans', sans-serif;
     font-size: 16px;
-    margin-bottom: -10px;
     color:  #292f36;
     text-transform: uppercase;
   }
@@ -78,16 +76,22 @@ text-transform: uppercase;
 .modest-meet__people__jillette{.people-hover}
 .modest-meet__people__reed{.people-hover}
 
-@media (max-width: 1170px) {
+@media (min-width: 767px) and (max-width: 1200px) {
+  .modest-meet{ width: 740px; }
+  .modest-meet__header{ font-size: 26px;}
+  .modest-meet__people{
+    margin-top: 30px;
+    justify-content:space-around;
+  }
+}
 
-  .modest-meet{
-    width: 700px;}
-
+@media  (max-width: 766px) {
+    .modest-meet{ width: 300px; }
+    .modest-meet__header{ font-size: 20px;}
     .modest-meet__people{
+      margin-top: 30px;
       justify-content:space-around;
     }
+    .people__img{ max-width: 250px;}
 
-    .modest-meet__header{
-    font-size: 24px;
-    }
 }

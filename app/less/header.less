@@ -7,7 +7,6 @@
 }
 
 .modest-header__content{
-
   width: 1170px;
   display: flex;
   -webkit-flex-flow: row wrap;
@@ -19,7 +18,6 @@
     top : 250px;
     padding-bottom: 20px;
   &__headline{
-
     font-family: 'Quattrocento Sans', sans-serif;
     font-size: 36px;
     color: white;
@@ -35,12 +33,7 @@
 }
 }
 
-.modest-header__content__buttons {
-  //position: absolute;
-  top : 390px;
-
-
-  &__btn{
+.modest-header__content__buttons__btn{
   margin: 15px 10px 0px;
   padding: 15px 15px;
   display: inline-block;
@@ -58,33 +51,59 @@
     transition: .5s;
   }
 }
+
+@media (min-width: 767px) and (max-width: 1200px) {
+  .modest-header{ min-height: 450px;}
+  .modest-header__content{
+    width: 740px;
+    &__info{
+      top : 170px;
+    &__headline{
+      font-size: 26px;
+  }
+    &__text{
+      max-width: 500px;
+      font-size: 14px;
+    }
+  }
+}
+.modest-header__content__buttons__btn{
+  margin: 10px 10px 0px;
+  padding: 13px 13px;
+  font-size: 12px;
+}
 }
 
-@media (max-width: 1170px) {
+@media (max-width: 766px) {
 
+  .modest-header{ min-height: 300px;}
   .modest-header__content{
-    width: 700px;
-
-      &__info{
-        top : 170px;
-        &__headline{
-
-          font-size: 20px;
-          color: white;
-      }
-        &__text{
-          font-size: 14px;
-          max-width: 480px;
-        }
-      }
+    width: 300px;
+    &__info{
+      top : 170px;
+    &__headline{
+      font-size: 16px;
   }
-
-  .modest-header{
-    min-height: 400px;
+    &__text{
+      max-width: 300px;
+      font-size: 14px;
+    }
   }
-  .modest-header__content__buttons__btn{
-    padding: 12px 12px;
-    font-size: 12px;
-  }
+}
+}
 
+@media (min-width: 375px) and (max-width: 766px) {
+.modest-header__content__buttons__btn{
+  margin: 5px 5px 0px;
+  padding: 12px 12px;
+  font-size: 14px;
+}
+}
+
+@media (max-width: 374px) {
+.modest-header__content__buttons__btn{
+  margin: 5px 5px 0px;
+  padding: 10px 10px;
+  font-size: 12px;
+}
 }

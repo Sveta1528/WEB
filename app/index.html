@@ -5,21 +5,22 @@
     <title>Document</title>
     <link rel="stylesheet" href="css/build.css"> <!-- Подключаем CSS -->
     <link rel="stylesheet" href="css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
     <!-- BEGIN NAVBAR BLOCK -->
   <div class="modest-navbar">
     <div class = "modest-navbar__container">
     <a class="modest-navbar__logo" href="#"><img src="img/logo.png" alt="modest logo" title="Modest logo"></a>
-    <nav class="modest-navbar__nav">
-      <a class="modest-navbar__nav__item__home" htrf="#">HOME</a>
-      <a class="modest-navbar__nav__item" htrf="#">ABOUT</a>
-      <a class="modest-navbar__nav__item" htrf="#">WORK</a>
-      <a class="modest-navbar__nav__item" htrf="#">TEAM</a>
-      <a class="modest-navbar__nav__item" htrf="#">SERVICES</a>
-      <a class="modest-navbar__nav__item" htrf="#">FEATURES</a>
-      <a class="modest-navbar__nav__item" htrf="#">CONTACT</a>
-    </nav>
+      <ul class="modest-navbar__nav">
+      <li><a class="modest-navbar__nav__item__home" htrf="#">HOME</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#">ABOUT</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#">WORK</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#">TEAM</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#">SERVICES</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#">FEATURES</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#">CONTACT</a></li>
+    </ul>
   </div>
   </div>
   <!-- END NAVBAR BLOCK -->
@@ -100,8 +101,8 @@
             <a class="modest-meet__people__social__facebook" href="#"><img src="img/dark_icons/facebook.png" width="50" ></a>
             <a class="modest-about__content__social__linkedin" href="#"><img src="img/dark_icons/linkedin.png" width="50" ></a>
           </div>
-        <p class="modest-meet__people__content__header">Gloria Bromley </p>
-        <p class="modest-meet__people__content__text">CEO and Founder</p>
+        <figcaption class="modest-meet__people__content__header">Gloria Bromley </figcaption>
+        <figcaption class="modest-meet__people__content__text">CEO and Founder</figcaption>
       </div>
       </div>
       <div class="modest-meet__people__torres">
@@ -112,8 +113,8 @@
             <a class="modest-meet__people__social__facebook" href="#"><img src="img/dark_icons/facebook.png" width="50" ></a>
             <a class="modest-about__content__social__linkedin" href="#"><img src="img/dark_icons/linkedin.png" width="50" ></a>
           </div>
-        <p class="modest-meet__people__content__header"> Paul Torress </p>
-        <p class="modest-meet__people__content__text">Head of development</p>
+        <figcaption class="modest-meet__people__content__header"> Paul Torress </figcaption>
+        <figcaption class="modest-meet__people__content__text">Head of development</figcaption>
       </div>
       </div>
       <div class="modest-meet__people__jillette">
@@ -124,8 +125,8 @@
             <a class="modest-meet__people__social__facebook" href="#"><img src="img/dark_icons/facebook.png" width="50" ></a>
             <a class="modest-about__content__social__linkedin" href="#"><img src="img/dark_icons/linkedin.png" width="50" ></a>
           </div>
-        <p class="modest-meet__people__content__header"> Judith Jillette </p>
-        <p class="modest-meet__people__content__text">Graphic designer</p>
+        <figcaption class="modest-meet__people__content__header"> Judith Jillette </figcaption>
+        <figcaption class="modest-meet__people__content__text">Graphic designer</figcaption>
       </div>
       </div>
       <div class="modest-meet__people__reed">
@@ -136,8 +137,8 @@
             <a class="modest-meet__people__social__facebook" href="#"><img src="img/dark_icons/facebook.png" width="50" ></a>
             <a class="modest-about__content__social__linkedin" href="#"><img src="img/dark_icons/linkedin.png" width="50" ></a>
           </div>
-        <p class="modest-meet__people__content__header"> Delores Reed </p>
-        <p class="modest-meet__people__content__text">Client Service Director</p>
+        <figcaption class="modest-meet__people__content__header"> Delores Reed </figcaption>
+        <figcaption class="modest-meet__people__content__text">Client Service Director</figcaption>
       </div>
       </div>
    </div>
@@ -315,7 +316,9 @@
   <!-- END FEATURES BLOCK -->
 </body>
 <footer class="modest-footer">
+  <div class="modest-footer__content">
   <img class="modest-footer__content__copyright" src="img/copyright.png">
   <img class="modest-footer__content__cicons" src="img/social_icons.png">
+</div>
 </footer>
 </html>

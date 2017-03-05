@@ -11,8 +11,12 @@
 
 .modest-navbar {
   background: #1d2126;
-
+  min-width: 320px;
   &__nav {
+    align-items: center;
+    margin: 0 auto;
+    list-style: none;
+    li { display: inline-block; }
     &__item {
       padding: 10px;
       margin-bottom: 50px;
@@ -44,12 +48,29 @@
 }
 
 
+@media (min-width: 767px) and (max-width: 1200px) {
+  .modest-navbar__container{width: 740px;}
+}
 
-
-@media (max-width: 1170px) {
-
+@media (max-width: 766px) {
   .modest-navbar__container{
-    width: 700px;
+    width: 315px;
+    min-height: 130px;
+    justify-content:space-around;
   }
 
+
+  .modest-navbar__nav {
+      li {
+        margin-bottom: 22px;
+      }
+      &__item {
+        padding: 7px;
+        //font-size: 12px;
+        &__home {
+          padding: 7px;
+          //font-size: 12px;
+        }
+      }
+    }
 }
