@@ -1,3 +1,7 @@
+@import "icons";
+@import "mixins";
+
+
 .modest-meet{
   width: 1170px;
   align-items: center;
@@ -47,6 +51,17 @@ text-transform: uppercase;
   margin-left: 35px;
   visibility:collapse;
 }
+
+.modest-meet__people__social__twitter{
+  .sprite(@s-dtwitter-width,@s-dtwitter-offset-x,@s-dtwitter-offset-y);
+}
+.modest-meet__people__social__facebook{
+  .sprite(@s-dfacebook-width,@s-dfacebook-offset-x,@s-dfacebook-offset-y);
+}
+.modest-about__content__social__linkedin{
+  .sprite(@s-dlinkedin-width,@s-dlinkedin-offset-x,@s-dlinkedin-offset-y);
+}
+
 
 
 .people-hover{
