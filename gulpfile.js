@@ -75,7 +75,7 @@ gulp.task('html', function() {
 });
 
 gulp.task('minify-css', function() {
-  return gulp.src('css/*.css')
+  return gulp.src('app/css/*.css')
     .pipe(cleanCSS({compatibility: 'ie8'}))
     .pipe(gulp.dest('dist/css'));
 });
