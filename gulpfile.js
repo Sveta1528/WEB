@@ -10,7 +10,6 @@ var less = require('gulp-less');
 
     var htmlclean = require('gulp-htmlclean');
     var concat = require('gulp-concat');
-    var uglify = require('gulp-uglify');
     var autoprefixer = require('gulp-autoprefixer');
     var del = require('del'); // Подключаем библиотеку для удаления файлов и папок
     var imagemin     = require('gulp-imagemin');
@@ -29,7 +28,7 @@ gulp.task('less-to-css', function(){
         .pipe(gulp.dest('./app/css'))
         .pipe(browserSync.reload({stream: true}))
         .pipe(gulp.dest('./dist/css'))
-        includePaths: require('node-normalize-scss').includePaths
+        includePaths: require('node-normalize-less').includePaths
 });
 
 gulp.task('browser-sync', function() { // Создаем таск browser-sync
