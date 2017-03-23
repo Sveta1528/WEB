@@ -21,7 +21,10 @@
     "gulp-imagemin": "^3.1.1",
     "gulp-inline-source": "^3.0.0",
     "gulp-less": "^3.3.0",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sourcemap": "^1.0.1",
     "gulp-spritesmith": "0.0.2",
+    "gulp-uglify": "^2.1.2",
     "less-plugin-autoprefix": "^1.5.1",
     "less-plugin-clean-css": "^1.5.1"
   },

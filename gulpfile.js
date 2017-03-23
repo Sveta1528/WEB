@@ -1,7 +1,7 @@
 var gulp = require('gulp')
 //load plugins
 var less = require('gulp-less');
-    browserSync = require('browser-sync'); // Подключаем Browser Sync
+    browserSync = require('browser-sync');// Подключаем Browser Sync
     inlinesource = require('gulp-inline-source');
     var LessPluginCleanCSS = require('less-plugin-clean-css'),
         LessPluginAutoPrefix = require('less-plugin-autoprefix'),
@@ -17,7 +17,20 @@ var less = require('gulp-less');
     var cache        = require('gulp-cache');
     var htmlmin = require('gulp-htmlmin');
     var cleanCSS = require('gulp-clean-css');
-    var spritesmith  = require('gulp.spritesmith')
+    var spritesmith  = require('gulp.spritesmith');
+    var uglify = require('gulp-uglify');
+    var rigger = require('gulp-rigger');
+    var sourcemaps = require('gulp-sourcemaps');
+    var config = {
+        server: {
+            baseDir: "dist"
+        },
+        tunnel: true,
+        host: 'localhost',
+        port: 9000,
+        logPrefix: "Frontend_Devil"
+    };
+
 
 gulp.task('less-to-css', function(){
     return gulp.src('app/less/**/*.less') // Берем все sass файлы из папки sass и дочерних, если таковые будут
@@ -30,16 +43,6 @@ gulp.task('less-to-css', function(){
         .pipe(gulp.dest('./dist/css'))
         includePaths: require('node-normalize-less').includePaths
 });
-
-gulp.task('browser-sync', function() { // Создаем таск browser-sync
-    browserSync({ // Выполняем browser Sync
-        server: { // Определяем параметры сервера
-            baseDir: 'app' // Директория для сервера - app
-        },
-        notify: false // Отключаем уведомления
-    });
-});
-
 
 //inline link, script and img in index.html . Clean html.
 gulp.task('index', function () {
@@ -96,22 +99,32 @@ gulp.task('icons', function() {
     spriteData.css.pipe(gulp.dest('app/less/')); // путь, куда сохраняем стили
 });
 
-gulp.task('build', ['clean','less-to-css','minify-css','img','html'], function() {
+gulp.task('jsbuild', function () {
+    gulp.src('app/js/**/*') //Найдем наш main файл
+        .pipe(rigger()) //Прогоним через rigger
+        .pipe(sourcemaps.init()) //Инициализируем sourcemap
+        .pipe(uglify()) //Сожмем наш js
+        .pipe(sourcemaps.write()) //Пропишем карты
+        .pipe(gulp.dest('dist/js')) //Выплюнем готовый файл в build
+        .pipe(browserSync.reload({stream: true})); //И перезагрузим сервер
+});
+
+gulp.task('webserver', function () {
+    browserSync(config);
+});
+
+gulp.task('build', ['clean','less-to-css','jsbuild','minify-css','img','html'], function() {
 
     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
     .pipe(gulp.dest('dist/fonts'))
-
-    var buildJs = gulp.src('app/js/**/*') // Переносим скрипты в продакшен
-    .pipe(gulp.dest('dist/js'))
-
 });
 
 
-gulp.task('watch', ['browser-sync', 'index', ], function() {
+gulp.task('watch', ['index'], function() {
     gulp.watch('app/less/**/*.less', ['less-to-css']); // Наблюдение за less файлами в папке less
     gulp.watch('app/*.html', browserSync.reload); // Наблюдение за HTML файлами в корне проекта
     gulp.watch('app/js/**/*.js', browserSync.reload);   // Наблюдение за JS файлами в папке js
     gulp.watch('./index.html', ['index']);
 });
 
-gulp.task('default', ['watch']);
+gulp.task('default', ['build','webserver','watch']);

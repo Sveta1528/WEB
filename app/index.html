@@ -6,49 +6,7 @@
     <link rel="stylesheet" href="css/build.css"> <!-- Подключаем CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script>function loadFont(fontName, woffUrl, woff2Url) {
-		  var nua = navigator.userAgent;
-		  var noSupport = !window.addEventListener  || (nua.match(/(Android (2|3|4.0|4.1|4.2|4.3))|(Opera (Mini|Mobi))/) && !nua.match(/Chrome/))
-		  if (noSupport) {
-		    return;
-		  }
-		  var loSto = {};
-		  try {
-		    loSto = localStorage || {};
-		  } catch(ex) {}
-		  var localStoragePrefix = 'x-font-' + fontName;
-		  var localStorageUrlKey = localStoragePrefix + 'url';
-		  var localStorageCssKey = localStoragePrefix + 'css';
-		  var storedFontUrl = loSto[localStorageUrlKey];
-		  var storedFontCss = loSto[localStorageCssKey];
-		  var styleElement = document.createElement('style');
-		  styleElement.rel = 'stylesheet';
-		  document.head.appendChild(styleElement);
-		  if (storedFontCss && (storedFontUrl === woffUrl || storedFontUrl === woff2Url)) {
-		    styleElement.textContent = storedFontCss;
-		  } else {
-		    var url = (woff2Url && supportsWoff2()) ? woff2Url : woffUrl;
-		    var request = new XMLHttpRequest();
-		    request.open('GET', url);
-		    request.onload = function() {
-		      if (request.status >= 200 && request.status < 400) {
-		        loSto[localStorageUrlKey] = url;
-		        loSto[localStorageCssKey] = styleElement.textContent = request.responseText;
-		      }
-		    };
-		    request.send();
-		  }
-
-		  function supportsWoff2() {
-		    if (!window.FontFace) {
-		      return false;
-		    }
-		    var f = new FontFace('t', 'url("data:application/font-woff2,") format("woff2")', {});
-		    f.load();
-		    return f.status === 'loading';
-		  }
-		}
-		</script>
+    <script src="js/fonts.js"></script>
 		<script>loadFont('OpenSans', '/css/woff.css', '/css/woff2.css')</script>
     <script>loadFont('Quattrocento Sans', '/css/woff.css', '/css/woff2.css')</script>
 
@@ -72,6 +30,14 @@
   <!-- END NAVBAR BLOCK -->
   <!-- BEGIN HEADER BLOCK -->
   <header class="modest-header">
+    <ul id="slides">
+        <li class="slide showing"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+        <li class="slide"></li>
+    </ul>
+    <script src="js/slide.js"></script>
     <div class="modest-header__content">
       <div class="modest-header__content__info">
           <div class="modest-header__content__info__headline">WELCOME TO OUR MARKETPLACE</div>
@@ -359,7 +325,6 @@
 </div>
 </div>
 </div>
-  <!-- END FEATURES BLOCK -->
 </body>
 <footer class="modest-footer">
   <div class="modest-footer__content">

@@ -1,21 +1,24 @@
 .modest-header{
-  background-image: url(../img/header-bg.png);
-  background-position: center top;
-  background-repeat: no-repeat;
-  background-size: cover;
+  //background-image: url(../img/header-bg.png);
+  //background-position: center top;
+  //background-repeat: no-repeat;
+  //background-size: cover;
+  //min-height: 560px;
   min-height: 560px;
 }
 
 .modest-header__content{
+  position: relative;
   width: 1170px;
+  left: auto;
   display: flex;
   -webkit-flex-flow: row wrap;
   justify-content:space-between;
   align-items: center;
   margin: 0 auto;
+  z-index: 3;
   &__info{
-    position: absolute;
-    top : 250px;
+    padding-top : 200px;
     padding-bottom: 20px;
   &__headline{
     font-family: 'Quattrocento Sans', sans-serif;
@@ -57,7 +60,7 @@
   .modest-header__content{
     width: 740px;
     &__info{
-      top : 170px;
+      padding-top : 170px;
     &__headline{
       font-size: 26px;
   }
@@ -76,11 +79,11 @@
 
 @media (max-width: 766px) {
 
-  .modest-header{ min-height: 300px;}
+  .modest-header{ min-height: 360px;}
   .modest-header__content{
     width: 300px;
     &__info{
-      top : 170px;
+      padding-top : 100px;
     &__headline{
       font-size: 16px;
   }
