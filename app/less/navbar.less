@@ -27,6 +27,7 @@
       cursor: pointer;
     }
     &__item {
+      text-decoration: none;
       padding: 10px;
       margin-bottom: 50px;
       font-family: 'Open Sans', sans-serif;
@@ -49,25 +50,19 @@
 
 @media (min-width: 767px) and (max-width: 1200px) {
   .modest-navbar__container{width: 740px;}
+  //.modest-navbar__nav{
+  //  display: none;
+  //}
 }
 
 @media (max-width: 766px) {
   .modest-navbar__container{
-    width: 315px;
-    min-height: 130px;
-    justify-content:space-around;
+    width: 300px;
+    min-height: 50px;
+    justify-content:flex-end;
   }
 
-
-  .modest-navbar__nav {
-      li {
-        margin-bottom: 22px;
-      }
-      &__item {
-        padding: 7px;
-        &__home {
-          padding: 7px;
-        }
-      }
-    }
+  .modest-navbar__nav{
+    display: none;
+  }
 }

@@ -21,9 +21,10 @@ var less = require('gulp-less');
     var uglify = require('gulp-uglify');
     var rigger = require('gulp-rigger');
     var sourcemaps = require('gulp-sourcemaps');
+    var babel = require('gulp-babel');
     var config = {
         server: {
-            baseDir: "dist"
+            baseDir: "app"
         },
         tunnel: true,
         host: 'localhost',
@@ -103,6 +104,9 @@ gulp.task('jsbuild', function () {
     gulp.src('app/js/**/*') //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
         .pipe(sourcemaps.init()) //Инициализируем sourcemap
+        .pipe(babel({
+    presets: ['es2015']
+  }))
         .pipe(uglify()) //Сожмем наш js
         .pipe(sourcemaps.write()) //Пропишем карты
         .pipe(gulp.dest('dist/js')) //Выплюнем готовый файл в build

@@ -9,7 +9,6 @@
     <script src="js/fonts.js"></script>
 		<script>loadFont('OpenSans', '/css/woff.css', '/css/woff2.css')</script>
     <script>loadFont('Quattrocento Sans', '/css/woff.css', '/css/woff2.css')</script>
-
 </head>
 <body>
     <!-- BEGIN NAVBAR BLOCK -->
@@ -18,15 +17,32 @@
     <a class="modest-navbar__logo" href="#"><img src="img/logo.png" alt="modest logo" title="Modest logo"></a>
       <ul class="modest-navbar__nav">
       <li><a class="modest-navbar__nav__home" htrf="#">HOME</a></li>
-      <li><a class="modest-navbar__nav__item" htrf="#">ABOUT</a></li>
+      <li><a class="modest-navbar__nav__item" htrf="#about">ABOUT</a></li>
       <li><a class="modest-navbar__nav__item" htrf="#">WORK</a></li>
-      <li><a class="modest-navbar__nav__item" htrf="#">TEAM</a></li>
+      <li><a class="modest-navbar__nav__item" href="#meet">TEAM</a></li>
       <li><a class="modest-navbar__nav__item" htrf="#">SERVICES</a></li>
       <li><a class="modest-navbar__nav__item" htrf="#">FEATURES</a></li>
       <li><a class="modest-navbar__nav__item" htrf="#">CONTACT</a></li>
     </ul>
   </div>
   </div>
+  <nav class="burger">
+    <a href="#" class="burger__button" id="burger-button">
+      <span class="burger__button__icon"></span>
+    </a>
+    <ul class="burger__menu">
+      <li><a class="burger__menu__item" href="#">HOME</a></li>
+      <li><a class="burger__menu__item" href="#">ABOUT</a></li>
+      <li><a class="burger__menu__item" href="#">WORK</a></li>
+      <li><a class="burger__menu__item" href="#meet">TEAM</a></li>
+      <li><a class="burger__menu__item" href="#">SERVICES</a></li>
+      <li><a class="burger__menu__item" href="#">FEATURES</a></li>
+      <li><a class="burger__menu__item" href="#">CONTACT</a></li>
+    </ul>
+  </nav>
+  <script src="js/burger.js"></script>
+
+
   <!-- END NAVBAR BLOCK -->
   <!-- BEGIN HEADER BLOCK -->
   <header class="modest-header">
@@ -51,6 +67,7 @@
     <!-- END HEADER BLOCK -->
     <!-- BEGIN ABOUT BLOCK -->
    <div class ="modest-about">
+     <a id="about"></a>
      <div class ="modest-about__header"> WE ARE MODEST. </div>
      <div class="modest-about__content">
        <div class="modest-about__content__text">
@@ -103,6 +120,7 @@
  <!-- END ABOUT BLOCK -->
  <!-- BEGIN MEET BLOCK -->
  <div class ="modest-meet">
+   <a name="meet"></a>
    <div class ="modest-meet__header"> Meet the team. </div>
    <div class="modest-meet__people">
       <div class="modest-meet__people__bromley">
