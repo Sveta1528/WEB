@@ -27,8 +27,12 @@
   </div>
   </div>
   <nav class="burger">
-    <a href="#" class="burger__button" id="burger-button">
-      <span class="burger__button__icon"></span>
+      <a href="#" class="burger__button" id="burger-button">
+      <div class="burger__icon">
+      <span class="line"></span>
+      <span class="line"></span>
+      <span class="line"></span>
+      </div>
     </a>
     <ul class="burger__menu">
       <li><a class="burger__menu__item" href="#">HOME</a></li>
@@ -41,17 +45,15 @@
     </ul>
   </nav>
   <script src="js/burger.js"></script>
-
-
   <!-- END NAVBAR BLOCK -->
   <!-- BEGIN HEADER BLOCK -->
   <header class="modest-header">
-    <ul id="slides">
-        <li class="slide showing"></li>
-        <li class="slide"></li>
-        <li class="slide"></li>
-        <li class="slide"></li>
-        <li class="slide"></li>
+    <ul class="slides">
+        <li class="slides__slide slides__showing"></li>
+        <li class="slides__slide"></li>
+        <li class="slides__slide"></li>
+        <li class="slides__slide"></li>
+        <li class="slides__slide"></li>
     </ul>
     <script src="js/slide.js"></script>
     <div class="modest-header__content">

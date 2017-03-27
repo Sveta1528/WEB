@@ -22,6 +22,7 @@ var less = require('gulp-less');
     var rigger = require('gulp-rigger');
     var sourcemaps = require('gulp-sourcemaps');
     var babel = require('gulp-babel');
+    var eslint = require('gulp-eslint');
     var config = {
         server: {
             baseDir: "app"
@@ -100,6 +101,13 @@ gulp.task('icons', function() {
     spriteData.css.pipe(gulp.dest('app/less/')); // путь, куда сохраняем стили
 });
 
+gulp.task('lint', () => {
+    return gulp.src('app/js/**/*')
+        .pipe(eslint())
+        .pipe(eslint.format())
+        .pipe(eslint.failAfterError());
+});
+
 gulp.task('jsbuild', function () {
     gulp.src('app/js/**/*') //Найдем наш main файл
         .pipe(rigger()) //Прогоним через rigger
@@ -117,7 +125,7 @@ gulp.task('webserver', function () {
     browserSync(config);
 });
 
-gulp.task('build', ['clean','less-to-css','jsbuild','minify-css','img','html'], function() {
+gulp.task('build', ['clean','less-to-css','lint','jsbuild','minify-css','img','html'], function() {
 
     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
     .pipe(gulp.dest('dist/fonts'))
@@ -131,4 +139,4 @@ gulp.task('watch', ['index'], function() {
     gulp.watch('./index.html', ['index']);
 });
 
-gulp.task('default', ['build','webserver','watch']);
+gulp.task('default', ['webserver','watch']);

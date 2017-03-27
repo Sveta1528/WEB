@@ -1,9 +1,9 @@
-var slides = document.querySelectorAll('#slides .slide');
-var currentSlide = 0;
-var slideInterval = setInterval(nextSlide,5000);
+const slides = document.querySelectorAll('.slides .slides__slide');
+let currentSlide = 0;
+const slideInterval = setInterval(nextSlide,5000);
 
-function nextSlide(){
-    slides[currentSlide].className = 'slide';
-    currentSlide = (currentSlide+1)%slides.length;
-    slides[currentSlide].className = 'slide showing';
+function nextSlide() {
+  slides[currentSlide].className = 'slides__slide';
+  currentSlide = (currentSlide+1)%slides.length;
+  slides[currentSlide].className = 'slides__slide slides__showing';
 }

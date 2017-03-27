@@ -1,28 +1,25 @@
 
-//@color: #23b7a4;
 @color: #1d2126;
 @button-radius: 30px;
 @button-line-height: 2px;
-@burger-width: 0.40 * @button-radius;
-@burger-gutter: 5px;
+@burger-width: 0.50 * @button-radius;
+@burger-gutter: 4px;
 
 body {
   &.open {
     overflow: hidden;
-
     &:before{
       visibility: visible;
       opacity: 1;
     }
-
   }
-
   &:before {
     content: "";
     position: fixed;
     z-index: 4;
     background-color: @color;
-    width: 100%;
+    width: 150px;
+    height: 300px;
     overflow: hidden;
     top:0;
     left:0;
@@ -33,6 +30,41 @@ body {
   }
 }
 
+.burger__button {
+  display: block;
+  position: relative;
+  background: @color;
+  width: @button-radius;
+  height: @button-radius;
+  border-radius: 50%;
+  align-items: center;
+  transition: all 0.5s ease;
+  border: @button-line-height solid transparent;
+  .burger__icon {
+    margin: auto;
+    transition: all .5s;
+    width: @burger-width;
+    margin-top: @burger-width/2;
+    transition: 0.5s ;
+
+    span {
+      display: block;
+      height: @button-line-height;
+      background: white;
+      margin-top:	 3px;
+      transition: all .5s;
+    }
+    }
+    &.open{
+      border: @button-line-height solid #fff;
+      .burger__icon {
+        span {
+          &:nth-child(1){ transform: rotate(-45deg) scaleX(.5) translate(-8px, -1px); margin-top: 5px;}
+          &:nth-child(3){ transform: rotate(45deg) scaleX(.5) translate(-7px, 2px); }
+        }
+    }
+    }
+}
 .burger {
   display: none;
   position: fixed;
@@ -40,103 +72,17 @@ body {
   top: 10px;
   left: 10px;
 
-  &__button {
-    display: block;
-    position: relative;
-    background: @color;
-    width: @button-radius;
-    height: @button-radius;
-    border-radius: 50%;
-    text-align: center;
-    vertical-align:middle;
-    transition: all 0.5s ease;
-    border: @button-line-height solid transparent;
-
-    &.open {
-      border: @button-line-height solid #fff;
-      box-shadow: none;
-    }
-
-    &__icon {
-      display: inline-block;
-      position: absolute;
-      background: #fff;
-      margin: 0 auto;
-      width: @burger-width;
-      height: @button-line-height;
-      top: 50%;
-      left: 0;
-      right:0;
-      transition: all 0.5s ease;
-      transform: translateY(-0.5 * @button-line-height);
-
-      &:before, &:after{
-        content: "";
-        position: absolute;
-        margin: 0 auto;
-        background: #fff;
-        width: @burger-width;
-        height: @button-line-height;
-        left: 0;
-        right:0;
-        transition: all 0.5s ease;
-      }
-
-      &:before {
-        bottom: @burger-gutter;
-      }
-
-      &:after {
-        top: @burger-gutter;
-      }
-    }
-
-    &.open &__icon {
-      background: transparent;
-
-      &:before, &:after {
-        transform-origin: 0 50%;
-        width: sqrt(pow(@burger-width, 2) + pow(2*@burger-gutter, 2));
-      }
-
-      &:before {
-        transform: rotateZ(atan(2*@burger-gutter/@burger-width));
-      }
-
-      &:after {
-        transform: rotateZ(-1 * atan(2*@burger-gutter/@burger-width));
-      }
-    }
-  }
-
   &__menu {
     list-style-type: none;
     padding: 0 0 0 20px;
 
-    & li {
+     li {
       display: block;
       position: relative;
       margin: 15px 0;
       visibility: hidden;
       transition: all 0.5s ease;
       transform: translateX(-400px);
-    }
-
-    & a {
-      display: block;
-      text-decoration: none;
-      color: #fff;
-      font-size: 1.5rem;
-      font-family: Arial, "san-serif";
-      font-weight: normal;
-      transition: all 0.4s ease;
-      border-left: 3px solid transparent;
-      padding-left: 0;
-
-      &:hover {
-        padding-left: 30px;
-        border-left: 3px solid #fff;
-      }
     }
   }
 
@@ -148,7 +94,21 @@ body {
   }
 }
 
-@media (max-width: 766px) {
+.burger__menu__item{
+  display: block;
+  text-decoration: none;
+  color: #fff;
+  font-size: 16px;
+  font-family: 'Open Sans', sans-serif;
+  transition: 0.4s;
+  border-left: 3px solid transparent;
+  &:hover {
+    padding-left: 10px;
+    border-left: 3px solid #fff;
+  }
+}
+
+@media (max-width: 2766px) {
   .burger{
     display: block;
   }
