@@ -4,32 +4,7 @@
 @shadow4 : 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22);
 @shadow5 : 0 19px 38px rgba(0,0,0,0.30), 0 15px 12px rgba(0,0,0,0.22);
 
-.testbutton{
-  font-family: 'Quattrocento Sans', sans-serif;
-  font-size: 14px;
-  text-decoration: none;
-  letter-spacing: 3px;
-  color: black;
-  &:hover,
-  &:focus {
-    cursor: default;
-    border: 2px solid #23b7a4;
-    transition: .5s;
-  }
-}
-
-#testbut{
-  padding: 15px 15px;
-  display: inline-block;
-  border: 2px solid #fff;
-  border-radius: 7px;
-  background-color: blue;
-  &.active{
-    background-color: red;
-  }
-}
 #sign {
-  //position: relative;
   width: 1170px;
   display: flex;
   flex-direction: row;
@@ -83,7 +58,7 @@
   top : 20%;
   left: 40%;
   width: 320px;
-  height: 330px;
+  height: 350px;
   padding: 25px;
   display: flex;
   justify-content:space-between;
@@ -92,7 +67,6 @@
   flex-direction: column;
   background-image: linear-gradient(to top left, #23b7a4 10%, lighten(#23b7a4, 20%) 65%, white 200%);
   transform : scale(0.000001,0.00001);
-  //transform: translateX(-400px);
   transition: all 0.2s ease-in;
 }
 
@@ -123,22 +97,53 @@
 .field{
   width: 280px;
   height: 30px;
-  background: #eaeef1;
+  background: white;
   border: none;
   border-radius: 5px;
   margin-bottom: 20px;
+  border: 2px solid transparent;
+}
+
+.field__name{
+  &.correct{
+    border: 2px solid green;
+  }
+  &.error{
+    //background-color: red;
+    border: 2px solid red;
+  }
+}
+
+.field__email{
+  &.correct{
+    border: 2px solid green;
+  }
+  &.error{
+    border: 2px solid red;
+  }
 }
 
 .area{
   width: 280px;
   height: 60px;
-  background: #eaeef1;
+  background: white;
   border: none;
   border-radius: 5px;
   font-size: 1em;
+  margin-bottom: 15px;
+  border: 2px solid transparent;
 }
 .form-title {
 	margin-bottom: 15px;
+}
+
+.area__message{
+  &.correct{
+    border: 2px solid green;
+  }
+  &.error{
+    border: 2px solid red;
+  }
 }
 
 .form-button {
@@ -156,4 +161,37 @@
 		cursor: pointer;
 		background-color: white;
 	}
+}
+
+.descr{
+  width: 260px;
+  font-family: 'Quattrocento Sans', sans-serif;
+  font-size: 14px;
+  background-color: white;
+  border-radius: 10px;
+  padding: 10px;
+  margin-bottom: 10px;
+  margin-top: -15px;
+  opacity: 0.8;
+}
+.name__descr ,.email__descr{
+    display: none;
+}
+
+
+.name{
+  &:hover{
+    .name__descr{
+      display: block;
+    }
+  }
+}
+
+
+.email{
+  &:hover{
+    .email__descr{
+      display: block;
+    }
+  }
 }

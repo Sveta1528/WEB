@@ -357,17 +357,23 @@
     <div class="exit" id="exit-button">X</div>
     <div class="name">
         <figcaption class="modal__text">Your name</figcaption>
-        <input class="field"> </input>
+        <input class="field field__name" id="name"></input>
+        <div class="descr name__descr">
+        Name must contains only letters.
+        </div>
     </div>
     <div class="email">
         <figcaption class="modal__text">Your Email</figcaption>
-        <input class="field"> </input>
+        <input class="field field__email" id="email"></input>
+        <div class="descr email__descr">
+        Email format: aaa@aaa.aa
+        </div>
     </div>
     <div class="message">
         <figcaption class="modal__text">Your message</figcaption>
-        <textarea class="area"> </textarea>
+        <textarea class="area area__message" id="message"></textarea>
     </div>
-		<div class="form-button">Go</div>
+		<div class="form-button" id="go-button">Go</div>
   </div>
 </div>
 <script src="js/form.js"></script>

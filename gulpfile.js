@@ -30,7 +30,6 @@ var less = require('gulp-less');
         tunnel: true,
         host: 'localhost',
         port: 9000,
-        logPrefix: "Frontend_Devil"
     };
 
 
