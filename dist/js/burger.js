@@ -1,2 +1,16 @@
-"use strict";var burger=document.getElementById("burger-button");burger.addEventListener("click",function(e){e.preventDefault(),document.body.classList.toggle("open"),burger.classList.toggle("open")});for(var button=document.getElementsByClassName("burger__menu__item"),i=0;i<button.length;i++)button[i].addEventListener("click",function(e){document.body.classList.toggle("open"),burger.classList.toggle("open")});
-//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbImJ1cmdlci5qcyJdLCJuYW1lcyI6WyJidXJnZXIiLCJkb2N1bWVudCIsImdldEVsZW1lbnRCeUlkIiwiZSIsInByZXZlbnREZWZhdWx0IiwiYWRkRXZlbnRMaXN0ZW5lciIsInRvZ2dsZSIsImJ1dHRvbiIsImdldEVsZW1lbnRzQnlDbGFzc05hbWUiLCJpIiwibGVuZ3RoIiwiY2xhc3NMaXN0Il0sIm1hcHBpbmdzIjoiWUFBQSxJQUFNQSxRQUFTQyxTQUFTQyxlQUFlLGdCQUF2Q0YsUUFBTUEsaUJBQWtCRSxRQUFBQSxTQUFBQSxHQUd0QkMsRUFBRUMsaUJBREpKLFNBQU9LLEtBQUFBLFVBQWlCQyxPQUFTLFFBQy9CSCxPQUFFQyxVQUFGRSxPQUFBLFNBTUYsS0FBTUMsR0FBQUEsUUFBU04sU0FBU08sdUJBQXVCLHNCQUF6Q0QsRUFBU04sRUFBQUEsRUFBQUEsT0FBU08sT0FBQUEsSUFDeEJELE9BQVNFLEdBQUFBLGlCQUFrQkMsUUFBM0IsU0FBQVAsR0FDRUksU0FBVUYsS0FBQUEsVUFBVkMsT0FBMkIsUUFDekJMLE9BQUFBLFVBQWNVLE9BQVVMIiwiZmlsZSI6ImJ1cmdlci5qcyIsInNvdXJjZXNDb250ZW50IjpbImNvbnN0IGJ1cmdlciA9IGRvY3VtZW50LmdldEVsZW1lbnRCeUlkKCdidXJnZXItYnV0dG9uJyk7XHJcblxyXG5idXJnZXIuYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoZSkgPT4ge1xyXG4gIGUucHJldmVudERlZmF1bHQoKTtcclxuICBkb2N1bWVudC5ib2R5LmNsYXNzTGlzdC50b2dnbGUoJ29wZW4nKTtcclxuICBidXJnZXIuY2xhc3NMaXN0LnRvZ2dsZSgnb3BlbicpO1xyXG59KTtcclxuXHJcblxyXG5jb25zdCBidXR0b24gPSBkb2N1bWVudC5nZXRFbGVtZW50c0J5Q2xhc3NOYW1lKCdidXJnZXJfX21lbnVfX2l0ZW0nKTtcclxuZm9yIChsZXQgaSA9IDA7IGkgPCBidXR0b24ubGVuZ3RoOyBpKyspIHtcclxuICBidXR0b25baV0uYWRkRXZlbnRMaXN0ZW5lcignY2xpY2snLCAoZSkgPT4ge1xyXG4gICAgZG9jdW1lbnQuYm9keS5jbGFzc0xpc3QudG9nZ2xlKCdvcGVuJyk7XHJcbiAgICBidXJnZXIuY2xhc3NMaXN0LnRvZ2dsZSgnb3BlbicpO1xyXG4gIH0pO1xyXG59Il0sInNvdXJjZVJvb3QiOiIvc291cmNlLyJ9
+const burger = document.getElementById('burger-button');
+
+burger.addEventListener('click', (e) => {
+  e.preventDefault();
+  document.body.classList.toggle('open');
+  burger.classList.toggle('open');
+});
+
+
+const button = document.getElementsByClassName('burger__menu__item');
+for (let i = 0; i < button.length; i++) {
+  button[i].addEventListener('click', (e) => {
+    document.body.classList.toggle('open');
+    burger.classList.toggle('open');
+  });
+}

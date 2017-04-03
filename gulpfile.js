@@ -25,7 +25,7 @@ var less = require('gulp-less');
     var eslint = require('gulp-eslint');
     var config = {
         server: {
-            baseDir: "app"
+            baseDir: "./app"
         },
         tunnel: true,
         host: 'localhost',
@@ -108,23 +108,15 @@ gulp.task('lint', () => {
 });
 
 gulp.task('jsbuild', function () {
-    gulp.src('app/js/**/*') //Найдем наш main файл
-        .pipe(rigger()) //Прогоним через rigger
-        .pipe(sourcemaps.init()) //Инициализируем sourcemap
-        .pipe(babel({
-    presets: ['es2015']
-  }))
-        .pipe(uglify()) //Сожмем наш js
-        .pipe(sourcemaps.write()) //Пропишем карты
-        .pipe(gulp.dest('dist/js')) //Выплюнем готовый файл в build
-        .pipe(browserSync.reload({stream: true})); //И перезагрузим сервер
+    gulp.src('app/js/**/*')
+        .pipe(gulp.dest('dist/js'))
 });
 
 gulp.task('webserver', function () {
     browserSync(config);
 });
 
-gulp.task('build', ['clean','less-to-css','lint','jsbuild','minify-css','img','html'], function() {
+gulp.task('build', ['clean','less-to-css','lint','minify-css','img','html','jsbuild'], function() {
 
     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
     .pipe(gulp.dest('dist/fonts'))
