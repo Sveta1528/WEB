@@ -23,6 +23,7 @@ var less = require('gulp-less');
     var sourcemaps = require('gulp-sourcemaps');
     var babel = require('gulp-babel');
     var eslint = require('gulp-eslint');
+    var iife = require("gulp-iife");
     var config = {
         server: {
             baseDir: "./app"
@@ -108,8 +109,12 @@ gulp.task('lint', () => {
 });
 
 gulp.task('jsbuild', function () {
-    gulp.src('app/js/**/*')
-        .pipe(gulp.dest('dist/js'))
+    return gulp.src('app/js/**/*')
+        .pipe(concat('main.js'))
+        .pipe(iife())
+        .pipe(babel({presets: ['es2015']}))
+        .pipe(uglify())
+        .pipe(gulp.dest('app/mainjs'))
 });
 
 gulp.task('webserver', function () {
@@ -120,6 +125,8 @@ gulp.task('build', ['clean','less-to-css','lint','minify-css','img','html','jsbu
 
     var buildFonts = gulp.src('app/fonts/**/*') // Переносим шрифты в продакшен
     .pipe(gulp.dest('dist/fonts'))
+    var buildFonts = gulp.src('app/mainjs/**/*') // Переносим шрифты в продакшен
+    .pipe(gulp.dest('dist/mainjs'))
 });
 
 

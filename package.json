@@ -21,6 +21,7 @@
     "gulp-concat": "^2.6.1",
     "gulp-htmlclean": "^2.7.9",
     "gulp-htmlmin": "^3.0.0",
+    "gulp-iife": "^0.3.0",
     "gulp-imagemin": "^3.1.1",
     "gulp-inline-source": "^3.0.0",
     "gulp-less": "^3.3.0",

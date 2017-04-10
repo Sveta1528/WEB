@@ -26,34 +26,28 @@ go.addEventListener('click', (e) => {
 
 name.addEventListener('blur', (e) => {
   if (validateName()) {
-    name.classList.remove('error');
-    name.classList.add('correct');
+    name.style.border = '2px solid green';
   }
   else{
-    name.classList.remove('correct');
-    name.classList.add('error');
+    name.style.border = '2px solid red';
   }
 });
 
 email.addEventListener('blur', (e) => {
   if (validateEmail()) {
-    email.classList.remove('error');
-    email.classList.add('correct');
+    email.style.border = '2px solid green';
   }
   else{
-    email.classList.remove('correct');
-    email.classList.add('error');
+    email.style.border = '2px solid red';
   }
 });
 
 message.addEventListener('blur', (e) => {
   if (validateMessage()) {
-    message.classList.remove('error');
-    message.classList.add('correct');
+    message.style.border = '2px solid green';
   }
   else{
-    message.classList.remove('correct');
-    message.classList.add('error');
+    message.style.border = '2px solid red';
   }
 });
 
@@ -61,12 +55,9 @@ function ClearForm() {
   message.value='';
   name.value='';
   email.value='';
-  name.classList.remove('error');
-  email.classList.remove('error');
-  message.classList.remove('error');
-  name.classList.remove('correct');
-  email.classList.remove('correct');
-  message.classList.remove('correct');
+  name.style.border = '2px solid transparent';
+  email.style.border = '2px solid transparent';
+  message.style.border = '2px solid transparent';
 }
 
 function validateName() {
