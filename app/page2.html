@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myapp">
+<head>
+    <meta charset="UTF-8">
+    <title>Modest</title>
+    <link rel="stylesheet" href="css/build.css"> <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
+</head>
+<body>
+  <div class="modest-navbar">
+    <div class = "modest-navbar__container">
+    <a class="modest-navbar__logo" href="#"><img src="img/logo.png" alt="modest logo" title="Modest logo"></a>
+      <ul class="modest-navbar__nav">
+      <li><a class="modest-navbar__nav__home" ui-sref ="index">HOME</a></li>
+      <li> <a class="modest-navbar__nav__item" ui-sref ="page"> ANGULAPAGE</a></li>
+      <li> <a class="modest-navbar__nav__item" ui-sref ="page2"> ANGULAPAGE2</a></li>
+    </ul>
+  </div>
+  </div>
+  <div class ="modest-meet">
+    <a id="meet"></a>
+    <div class ="modest-meet__header"> Angular page 2. </div>
+    <div class="modest-meet__people">
+       <div class="modest-meet__people__bromley">
+         <img class="people__img" src="img/people/bromley.png">
+         <div class="modest-meet__people__content">
+           <div class="modest-meet__people__social">
+             <a class="modest-meet__people__social__twitter" href="#"></a>
+             <a class="modest-meet__people__social__facebook" href="#"></a>
+             <a class="modest-about__content__social__linkedin" href="#"></a>
+           </div>
+         <figcaption class="modest-meet__people__content__header">Gloria Bromley </figcaption>
+         <figcaption class="modest-meet__people__content__text">CEO and Founder</figcaption>
+       </div>
+       </div>
+       <div class="modest-meet__people__torres">
+         <img class="people__img" src="img/people/torres.png">
+         <div class="modest-meet__people__content">
+           <div class="modest-meet__people__social">
+             <a class="modest-meet__people__social__twitter" href="#"></a>
+             <a class="modest-meet__people__social__facebook" href="#"></a>
+             <a class="modest-about__content__social__linkedin" href="#"></a>
+           </div>
+         <figcaption class="modest-meet__people__content__header"> Paul Torress </figcaption>
+         <figcaption class="modest-meet__people__content__text">Head of development</figcaption>
+       </div>
+       </div>
+       <div class="modest-meet__people__jillette">
+          <img class="people__img" src="img/people/gillette.png">
+         <div class="modest-meet__people__content">
+           <div class="modest-meet__people__social">
+             <a class="modest-meet__people__social__twitter" href="#"></a>
+             <a class="modest-meet__people__social__facebook" href="#"></a>
+             <a class="modest-about__content__social__linkedin" href="#"></a>
+           </div>
+         <figcaption class="modest-meet__people__content__header"> Judith Jillette </figcaption>
+         <figcaption class="modest-meet__people__content__text">Graphic designer</figcaption>
+       </div>
+       </div>
+       <div class="modest-meet__people__reed">
+         <img class="people__img" src="img/people/reed.png">
+         <div class="modest-meet__people__content">
+           <div class="modest-meet__people__social">
+             <a class="modest-meet__people__social__twitter" href="#"></a>
+             <a class="modest-meet__people__social__facebook" href="#"></a>
+             <a class="modest-about__content__social__linkedin" href="#"></a>
+           </div>
+         <figcaption class="modest-meet__people__content__header"> Delores Reed </figcaption>
+         <figcaption class="modest-meet__people__content__text">Client Service Director</figcaption>
+       </div>
+       </div>
+    </div>
+  </div>
+  <div ui-view></div>
+</body>
+</html>

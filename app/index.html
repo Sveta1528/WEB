@@ -6,8 +6,11 @@
     <link rel="stylesheet" href="css/build.css"> <!-- Подключаем CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.2/angular.min.js"></script>
+    <script src="//unpkg.com/angular-ui-router/release/angular-ui-router.min.js"></script>
 </head>
-<body>
+<body ng-app="myapp">
+  <div class="col-xs-6" ui-view>
     <!-- BEGIN NAVBAR BLOCK -->
   <div class="modest-navbar">
     <div class = "modest-navbar__container">
@@ -19,7 +22,8 @@
       <li><a class="modest-navbar__nav__item" href="#meet">TEAM</a></li>
       <li><a class="modest-navbar__nav__item" href="#do">SERVICES</a></li>
       <li><a class="modest-navbar__nav__item" href="#features">FEATURES</a></li>
-      <li><a class="modest-navbar__nav__item" href="#contact">CONTACT</a></li>
+      <li> <a class="modest-navbar__nav__item" ui-sref ="page"> ANGULAR PAGE</a></li>
+      <li> <a class="modest-navbar__nav__item" ui-sref ="page2"> ANGULAR PAGE2</a></li>
     </ul>
   </div>
   </div>
@@ -39,6 +43,7 @@
       <li><a class="burger__menu__item" href="#do">SERVICES</a></li>
       <li><a class="burger__menu__item" href="#features">FEATURES</a></li>
       <li><a class="burger__menu__item" href="#contact">CONTACT</a></li>
+      <li><a class="burger__menu__item" href="#contact">PAGE</a></li>
     </ul>
   </nav>
   <!-- END NAVBAR BLOCK -->
@@ -371,6 +376,7 @@
 		<div class="form-button" id="go-button">Go</div>
   </div>
 </div>
+<script src="app.js"></script>
 <script src="mainjs/main.js"></script>
 <script>loadFont('OpenSans', '/css/woff.css', '/css/woff2.css')</script>
 <script>loadFont('Quattrocento Sans', '/css/woff.css', '/css/woff2.css')</script>
@@ -381,4 +387,5 @@
   <img class="modest-footer__content__cicons" src="img/social_icons.png">
 </div>
 </footer>
+</div>
 </html>
