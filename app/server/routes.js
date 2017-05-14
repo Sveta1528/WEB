@@ -22,4 +22,13 @@ module.exports = function(app, db) {
       else { res.send('Error')}
     });
     });
+
+    // PUT
+    app.put ('/records/:title', (req, res) => {
+      const record ={ text: req.body.body, title: req.body.title };
+      db.collection('records').update({ 'title': req.params.title }, record, (err, result) => {
+        if (!err) { res.send(record);}
+        else { res.send('Error')}
+      });
+    });
 };
