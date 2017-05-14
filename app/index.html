@@ -1,11 +1,13 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" ng-app="myApp">
 <head>
     <meta charset="UTF-8">
     <title>Modest</title>
     <link rel="stylesheet" href="css/build.css"> <!-- Подключаем CSS -->
     <link rel="stylesheet" href="css/normalize.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <script type="text/javascript" src="app.js"></script>
 </head>
 <body>
     <!-- BEGIN NAVBAR BLOCK -->
@@ -225,84 +227,74 @@
 </div>
   <!-- END GALLERY BLOCK -->
   <!-- BEGIN DO BLOCK -->
-  <div class ="modest-do">
+  <div class ="modest-do" ng-controller="GetDoController">
   <a id="do"></a>
   <div class ="modest-do__header"> What we do. </div>
   <div class="modest-do__content">
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/cogs.png">
-      <figcaption class="modest-do__content__item__header">Easy theme Setup</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{setup_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/pencil.png">
-      <figcaption class="modest-do__content__item__header">pixel perfect design</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{design_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/mobile.png">
-      <figcaption class="modest-do__content__item__header">responsive display</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{display_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/clock.png">
-      <figcaption class="modest-do__content__item__header">24/7 support</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{support_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/cogs.png">
-      <figcaption class="modest-do__content__item__header">Easy theme Setup</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{setup_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/pencil.png">
-      <figcaption class="modest-do__content__item__header">pixel perfect design</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{design_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/mobile.png">
-      <figcaption class="modest-do__content__item__header">responsive display</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{display_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
       <div class="modest-do__content__item">
       <img class="modest-do__content__item__img" src="img/Do/clock.png">
-      <figcaption class="modest-do__content__item__header">24/7 support</figcaption>
-      <figcaption class="modest-do__content__item__text">Nunc mattis lorem in leo lobortis, ut venenatis justo commodo.
-        Maecenas a justo nec velit egestas fermentum.</figcaption>
+      <figcaption class="modest-do__content__item__header">{{support_text}}</figcaption>
+      <figcaption class="modest-do__content__item__text">{{do_text}}</figcaption>
       </div>
   </div>
 </div>
   <!-- END DO BLOCK -->
   <!-- BEGIN FEATURES BLOCK -->
-  <div class ="modest-features">
+  <div class ="modest-features" ng-controller="GetDoController">
   <a id="features"></a>
   <div class="modest-features__container">
   <div class ="modest-features__header"> Features. </div>
   <div class="modest-features__content">
   <div class="modest-features__content__item">
   <img class="modest-features__content__item__img" src="img/features/1.png">
-  <figcaption class="modest-features__content__item__header">Product Design: Eames Chairs</figcaption>
-  <figcaption class="modest-features__content__item__text">Eames designs are certainly iconic.
-    Everyone of us know at least two or three of their famous chairs.
-    I would even risk saying that most of us dream about having a nice Eames.</figcaption>
+  <figcaption class="modest-features__content__item__header">{{features_header}}</figcaption>
+  <figcaption class="modest-features__content__item__text">{{features_text}}</figcaption>
   </div>
   <div class="modest-features__content__item">
   <img class="modest-features__content__item__img" src="img/features/2.png">
-  <figcaption class="modest-features__content__item__header">Product Design: Eames Chairs</figcaption>
+  <figcaption class="modest-features__content__item__header">{{features_header}}</figcaption>
   <figcaption class="modest-features__content__item__text">Eames designs are certainly iconic.
     Everyone of us know at least two or three of their famous chairs.
     I would even risk saying that most of us dream about having a nice Eames.</figcaption>
   </div>
   <div class="modest-features__content__item">
   <img class="modest-features__content__item__img" src="img/features/3.png">
-  <figcaption class="modest-features__content__item__header">Product Design: Eames Chairs</figcaption>
+  <figcaption class="modest-features__content__item__header">{{features_header}}</figcaption>
   <figcaption class="modest-features__content__item__text">Eames designs are certainly iconic.
     Everyone of us know at least two or three of their famous chairs.
     I would even risk saying that most of us dream about having a nice Eames.</figcaption>
@@ -371,9 +363,6 @@
 		<div class="form-button" id="go-button">Go</div>
   </div>
 </div>
-<script src="mainjs/main.js"></script>
-<script>loadFont('OpenSans', '/css/woff.css', '/css/woff2.css')</script>
-<script>loadFont('Quattrocento Sans', '/css/woff.css', '/css/woff2.css')</script>
 </body>
 <footer class="modest-footer">
   <div class="modest-footer__content">
