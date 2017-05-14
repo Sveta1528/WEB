@@ -33,11 +33,14 @@
     "less-plugin-clean-css": "^1.5.1"
   },
   "dependencies": {
+    "body-parser": "^1.17.1",
+    "express": "^4.15.2",
     "gulp": "^3.9.1",
     "gulp-stylus": "^2.6.0",
     "gulp.spritesmith": "^6.3.0",
     "imagemin": "^5.2.2",
     "imagemin-mozjpeg": "^6.0.0",
-    "imagemin-pngquant": "^5.0.0"
+    "imagemin-pngquant": "^5.0.0",
+    "mongodb": "^2.2.26"
   }
 }
