@@ -15,4 +15,11 @@ module.exports = function(app, db) {
       });
     });
 
+    // DELETE
+    app.delete('/records/:title', (req, res) => {
+    db.collection('records').remove({ 'title': req.params.title }, (err, result) => {
+      if (!err) { res.send('Record deleted');}
+      else { res.send('Error')}
+    });
+    });
 };
