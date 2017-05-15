@@ -5,8 +5,8 @@ const app            = express();
 const database       = require('./db');
 const port           = 8000;
 
-app.use(bodyParser.urlencoded({ extended: true }));
-//app.use(bodyParser.json());
+//app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
 
 app.use(function (req, res, next) {
 	res.setHeader("Access-Control-Allow-Origin", "*");

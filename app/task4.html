@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="myApp">
+<head>
+    <meta charset="UTF-8">
+    <title>Modest</title>
+    <link rel="stylesheet" href="css/build.css"> <!-- Подключаем CSS -->
+    <link rel="stylesheet" href="css/normalize.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+     <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.4/angular.min.js"></script>
+     <script type="text/javascript" src="angular/app.js"></script>
+
+</head>
+<body ng-controller="MainController as main">
+  <div class="modest-navbar">
+    <div class = "modest-navbar__container">
+    <a class="modest-navbar__logo" href="#"><img src="img/logo.png" alt="modest logo" title="Modest logo"></a>
+      <ul class="modest-navbar__nav">
+      <li><a class="modest-navbar__nav__home" href="index.html">HOME</a></li>
+    </ul>
+  </div>
+  </div>
+
+  <div ng-controller="NotesCtrl as notesCtrl">
+  <div class="notes">
+  <div ng-repeat="note in main.note">
+    <div class= "notes__note">
+      <div class="notes__form__text">{{"Notes №: "+note.title}}</div>
+      <div class="notes__form__text">{{note.text}}</div>
+      <input type="submit" class="notes__form__button" value="Add"></input>
+    </div>
+  </div>
+  <p class="notes__form__text">{{"New note: "}}{{notesCtrl.record.text}}</p>
+</div>
+
+<form class="notes__form" ng-submit="notesCtrl.addNotes()">
+      <div class="notes__form__message">
+          <figcaption class="notes__form__text">Add note</figcaption>
+          <input ng-model="notesCtrl.record.text" class="notes__form__area"> </input>
+      </div>
+      <input type="submit" class="notes__form__button" value="Add"></input>
+</form>
+
+
+<form class="notes__form" ng-submit="notesCtrl.deleteNotes()">
+      <div class="notes__form__message">
+          <figcaption class="notes__form__text">Delete note №</figcaption>
+          <input ng-model="notesCtrl.delete.number" class="notes__form__area"> </input>
+      </div>
+      <input type="submit" class="notes__form__button " value="Delete"></input>
+</form>
+
+
+</div>
+
+</div>
+
+
+</body>
