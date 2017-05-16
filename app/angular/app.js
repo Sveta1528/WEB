@@ -47,25 +47,17 @@ app.directive('getDirective', function($http, MyFactory) {
 });
 
 app.controller('MainController', function($scope, MyFactory){
-   MyFactory.Read("count_notes").then(function (response) {
-    $scope.count = parseInt(response.data.text);
-  });
-
    this.note = notes;
 });
 
 var notes = [
 ];
 
-var number_notes = [
-
-];
-
-
 
 function NotesCtrl($http, MyFactory){
 
   this.record = {};
+  this.forupdate ={};
   var last = 0;
 
   this.addNotes = function(){
@@ -82,26 +74,41 @@ function NotesCtrl($http, MyFactory){
       last++;
   };
 
-  this.deleteNotes = function(){
-    var title = this.delete.number.toString();
+this.deleteNotes = function(note){
 
-    MyFactory.Delete(title).
-    then(function (response) {
-      console.log("DELETE request : OK");
-    });
+  var title = note.title;
 
-    var ind =0;
+  MyFactory.Delete(title).
+  then(function (response) {
+    console.log("DELETE request : OK");
+  });
+  var ind = findIndex(title);
+  notes.splice(ind,1);
+};
 
+this.updateNotes = function(note){
+
+  var title = note.title;
+  var data = this.forupdate.text;
+
+  MyFactory.Update(title,data).
+  then(function (response) {
+    console.log("PUT request : OK");
+  });
+
+  var ind = findIndex(title);
+
+  notes[ind].text = data;
+   this.forupdate = {};
+};
+
+  function findIndex (title){
     for (var i=0; i<notes.length; i++)
       if (notes[i].title == title)
-      {
-        ind = i;
-        break;
-      }
-
-    notes.splice(ind,1);
-
+        return i;
   }
+
 };
+
 
 })();

@@ -25,11 +25,18 @@
   <div ng-repeat="note in main.note">
     <div class= "notes__note">
       <div class="notes__form__text">{{"Notes №: "+note.title}}</div>
-      <div class="notes__form__text">{{note.text}}</div>
-      <input type="submit" class="notes__form__button" value="Add"></input>
+      <div class="notes__form__text notes__form__text__note">{{note.text}}</div>
     </div>
+    <hr align="center" size="1px" color="#dddddd"  width=500px />
+    <div class= "notes__note">
+    <figcaption class="notes__form__text">New text: </figcaption>
+    <input  class="notes__form__area notes__form__area__update" ng-model="notesCtrl.forupdate.text"> </input>
+    <input class="notes__form__button notes__form__button__note" value="update"  ng-click="notesCtrl.updateNotes(note)"></input>
+     <figcaption class="notes__form__text"> or </figcaption>
+    <input class="notes__form__button notes__form__button__note" value="delete" ng-click="notesCtrl.deleteNotes(note)"></input>
+    </div>
+    <hr align="center" size="2px" color="#dddddd"  />
   </div>
-  <p class="notes__form__text">{{"New note: "}}{{notesCtrl.record.text}}</p>
 </div>
 
 <form class="notes__form" ng-submit="notesCtrl.addNotes()">
@@ -39,17 +46,8 @@
       </div>
       <input type="submit" class="notes__form__button" value="Add"></input>
 </form>
-
-
-<form class="notes__form" ng-submit="notesCtrl.deleteNotes()">
-      <div class="notes__form__message">
-          <figcaption class="notes__form__text">Delete note №</figcaption>
-          <input ng-model="notesCtrl.delete.number" class="notes__form__area"> </input>
-      </div>
-      <input type="submit" class="notes__form__button " value="Delete"></input>
-</form>
-
-
+<div class="notes">
+</div>
 </div>
 
 </div>
